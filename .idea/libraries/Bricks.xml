@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Bricks">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/Bricks.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
