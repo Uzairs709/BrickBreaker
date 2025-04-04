@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<ckjm>
+	<class>
+		<name>brickbreaker.LevelOne</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>9</rfc>
+		<lcom>1</lcom>
+		<ca>1</ca>
+		<ce>2</ce>
+		<npm>2</npm>
+		<lcom3>2.0</lcom3>
+		<loc>72</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>33.0</amc>
+		<cc>
+			<method name="public java.util.ArrayList createBrickPattern()">4</method>
+			<method name="public void _init_()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.Brick</name>
+		<wmc>3</wmc>
+		<dit>6</dit>
+		<noc>0</noc>
+		<cbo>6</cbo>
+		<rfc>10</rfc>
+		<lcom>3</lcom>
+		<ca>6</ca>
+		<ce>0</ce>
+		<npm>3</npm>
+		<lcom3>1.0</lcom3>
+		<loc>40</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.9975031210986267</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>11.666666666666666</amc>
+		<cc>
+			<method name="public int getBRICK_WIDTH()">1</method>
+			<method name="public int getBRICK_HEIGHT()">1</method>
+			<method name="public void _init_(javax.swing.ImageIcon brickImage)">2</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.Ball</name>
+		<wmc>13</wmc>
+		<dit>6</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>27</rfc>
+		<lcom>48</lcom>
+		<ca>1</ca>
+		<ce>0</ce>
+		<npm>10</npm>
+		<lcom3>0.9537037037037037</lcom3>
+		<loc>179</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.9852034525277436</mfa>
+		<cam>0.6538461538461539</cam>
+		<ic>2</ic>
+		<cbm>8</cbm>
+		<amc>12.076923076923077</amc>
+		<cc>
+			<method name="public int getyVelocity()">1</method>
+			<method name="public int getBallHeight()">1</method>
+			<method name="public void moveBall()">1</method>
+			<method name="public int getxVelocity()">1</method>
+			<method name="private int reflectHorizontal(int pos, int size, int velocity, int leftBound, int rightBound)">3</method>
+			<method name="private void loadBallImage()">1</method>
+			<method name="public void setxVelocity(int xVelocity)">1</method>
+			<method name="public int getBallWidth()">1</method>
+			<method name="private int reflectVertical(int pos, int velocity, int topBound)">2</method>
+			<method name="public int getX()">1</method>
+			<method name="public void _init_()">1</method>
+			<method name="public int getY()">1</method>
+			<method name="public void setyVelocity(int yVelocity)">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.BackgroundImageLabel</name>
+		<wmc>1</wmc>
+		<dit>5</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>10</rfc>
+		<lcom>0</lcom>
+		<ca>1</ca>
+		<ce>0</ce>
+		<npm>1</npm>
+		<lcom3>2.0</lcom3>
+		<loc>34</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>1.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>33.0</amc>
+		<cc>
+			<method name="public void _init_()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.GamePanel</name>
+		<wmc>5</wmc>
+		<dit>5</dit>
+		<noc>0</noc>
+		<cbo>9</cbo>
+		<rfc>51</rfc>
+		<lcom>2</lcom>
+		<ca>1</ca>
+		<ce>8</ce>
+		<npm>2</npm>
+		<lcom3>0.6875</lcom3>
+		<loc>541</loc>
+		<dam>1.0</dam>
+		<moa>4</moa>
+		<mfa>0.9942446043165467</mfa>
+		<cam>0.4</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>105.6</amc>
+		<cc>
+			<method name="private java.util.ArrayList createBrickPattern()">1</method>
+			<method name="private brickbreaker.Brick checkCollisionsWithBricks(java.util.ArrayList bricks, brickbreaker.Ball ball)">18</method>
+			<method name="private void checkCollisionsWithBase(brickbreaker.Base base, brickbreaker.Ball ball)">15</method>
+			<method name="public void _init_()">2</method>
+			<method name="public void actionPerformed(java.awt.event.ActionEvent e)">6</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.Level</name>
+		<wmc>1</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>7</cbo>
+		<rfc>1</rfc>
+		<lcom>0</lcom>
+		<ca>7</ca>
+		<ce>0</ce>
+		<npm>1</npm>
+		<lcom3>2.0</lcom3>
+		<loc>1</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>0.0</amc>
+		<cc>
+			<method name="public abstract java.util.ArrayList createBrickPattern()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.LevelFive</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>11</rfc>
+		<lcom>3</lcom>
+		<ca>1</ca>
+		<ce>2</ce>
+		<npm>2</npm>
+		<lcom3>1.5</lcom3>
+		<loc>85</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>25.0</amc>
+		<cc>
+			<method name="public java.util.ArrayList createBrickPattern()">1</method>
+			<method name="private java.util.ArrayList createTrianglePattern(int startX, int startY)">3</method>
+			<method name="public void _init_()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.LevelTwo</name>
+		<wmc>4</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>12</rfc>
+		<lcom>6</lcom>
+		<ca>1</ca>
+		<ce>2</ce>
+		<npm>2</npm>
+		<lcom3>1.3333333333333333</lcom3>
+		<loc>100</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.75</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>22.75</amc>
+		<cc>
+			<method name="public java.util.ArrayList createBrickPattern()">2</method>
+			<method name="private boolean shouldCreateBrick(int row, int col)">4</method>
+			<method name="public void _init_()">1</method>
+			<method name="private java.util.ArrayList createBricksForRow(int row, int yPos)">3</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.Settings</name>
+		<wmc>6</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>2</cbo>
+		<rfc>7</rfc>
+		<lcom>3</lcom>
+		<ca>2</ca>
+		<ce>0</ce>
+		<npm>6</npm>
+		<lcom3>0.6</lcom3>
+		<loc>40</loc>
+		<dam>1.0</dam>
+		<moa>1</moa>
+		<mfa>0.0</mfa>
+		<cam>0.5833333333333334</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>5.166666666666667</amc>
+		<cc>
+			<method name="public boolean isSoundEffectsOn()">1</method>
+			<method name="public void setBackgroundMusicOn(boolean backgroundMusicOn)">1</method>
+			<method name="public void _init_()">1</method>
+			<method name="public void setSoundEffectsOn(boolean soundEffectsOn)">1</method>
+			<method name="public static brickbreaker.Settings getInstance()">2</method>
+			<method name="public boolean isBackgroundMusicOn()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.Base</name>
+		<wmc>8</wmc>
+		<dit>6</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>24</rfc>
+		<lcom>16</lcom>
+		<ca>1</ca>
+		<ce>0</ce>
+		<npm>7</npm>
+		<lcom3>0.9523809523809524</lcom3>
+		<loc>146</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.9913151364764268</mfa>
+		<cam>0.6875</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>16.125</amc>
+		<cc>
+			<method name="public void keyReleased(java.awt.event.KeyEvent e)">4</method>
+			<method name="private void setBaseImage()">1</method>
+			<method name="public void keyTyped(java.awt.event.KeyEvent e)">1</method>
+			<method name="public void keyPressed(java.awt.event.KeyEvent e)">4</method>
+			<method name="public void _init_()">1</method>
+			<method name="public int getBaseWidth()">1</method>
+			<method name="public int getBaseHeight()">1</method>
+			<method name="public void move()">4</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.BrickBreaker</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>5</rfc>
+		<lcom>1</lcom>
+		<ca>0</ca>
+		<ce>1</ce>
+		<npm>2</npm>
+		<lcom3>2.0</lcom3>
+		<loc>11</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.5</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>4.5</amc>
+		<cc>
+			<method name="public static void main(String[] args)">1</method>
+			<method name="public void _init_()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.AudioPlayback</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>1</cbo>
+		<rfc>19</rfc>
+		<lcom>3</lcom>
+		<ca>1</ca>
+		<ce>0</ce>
+		<npm>3</npm>
+		<lcom3>2.0</lcom3>
+		<loc>89</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.3333333333333333</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>28.666666666666668</amc>
+		<cc>
+			<method name="public static void playMusic()">1</method>
+			<method name="public void _init_()">1</method>
+			<method name="public static void playSoundEffect()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.GameFrame</name>
+		<wmc>2</wmc>
+		<dit>6</dit>
+		<noc>0</noc>
+		<cbo>4</cbo>
+		<rfc>18</rfc>
+		<lcom>1</lcom>
+		<ca>1</ca>
+		<ce>3</ce>
+		<npm>1</npm>
+		<lcom3>2.0</lcom3>
+		<loc>47</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.9985734664764622</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>22.5</amc>
+		<cc>
+			<method name="public void _init_()">2</method>
+			<method name="private void playBackgroundMusic()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.LevelFour</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>11</rfc>
+		<lcom>3</lcom>
+		<ca>1</ca>
+		<ce>2</ce>
+		<npm>2</npm>
+		<lcom3>1.5</lcom3>
+		<loc>74</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>22.0</amc>
+		<cc>
+			<method name="public java.util.ArrayList createBrickPattern()">2</method>
+			<method name="private java.util.ArrayList createRow(int startX, int y, int bricksInRow)">2</method>
+			<method name="public void _init_()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.LevelFactory</name>
+		<wmc>2</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>7</cbo>
+		<rfc>8</rfc>
+		<lcom>1</lcom>
+		<ca>1</ca>
+		<ce>6</ce>
+		<npm>2</npm>
+		<lcom3>2.0</lcom3>
+		<loc>27</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.5</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>12.5</amc>
+		<cc>
+			<method name="public static brickbreaker.Level getLevel(int levelNumber)">2</method>
+			<method name="public void _init_()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.CONSTANTS</name>
+		<wmc>1</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>0</cbo>
+		<rfc>2</rfc>
+		<lcom>0</lcom>
+		<ca>0</ca>
+		<ce>0</ce>
+		<npm>1</npm>
+		<lcom3>2.0</lcom3>
+		<loc>11</loc>
+		<dam>0.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>1.0</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>3.0</amc>
+		<cc>
+			<method name="public void _init_()">1</method>
+		</cc>
+	</class>
+	<class>
+		<name>brickbreaker.LevelThree</name>
+		<wmc>3</wmc>
+		<dit>1</dit>
+		<noc>0</noc>
+		<cbo>3</cbo>
+		<rfc>11</rfc>
+		<lcom>3</lcom>
+		<ca>1</ca>
+		<ce>2</ce>
+		<npm>2</npm>
+		<lcom3>1.5</lcom3>
+		<loc>84</loc>
+		<dam>1.0</dam>
+		<moa>0</moa>
+		<mfa>0.0</mfa>
+		<cam>0.6666666666666666</cam>
+		<ic>0</ic>
+		<cbm>0</cbm>
+		<amc>24.666666666666668</amc>
+		<cc>
+			<method name="public java.util.ArrayList createBrickPattern()">1</method>
+			<method name="public void _init_()">1</method>
+			<method name="private java.util.ArrayList createBrickBox(int startX, int startY, int rows, int cols)">3</method>
+		</cc>
+	</class>
+</ckjm>

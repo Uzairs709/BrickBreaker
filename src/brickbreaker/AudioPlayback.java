@@ -17,7 +17,7 @@ public class AudioPlayback {
     public static void playMusic() {
         AudioInputStream audioStream;
         try {
-            audioStream = AudioSystem.getAudioInputStream(new File("assets/bg-music.wav"));
+            audioStream = AudioSystem.getAudioInputStream(new File(CONSTANTS.AUDIO_PATH));
             AudioFormat format = audioStream.getFormat();
             DataLine.Info info = new DataLine.Info(Clip.class, format);
             Clip audioClip = (Clip) AudioSystem.getLine(info);
@@ -40,7 +40,7 @@ public class AudioPlayback {
         AudioInputStream soundEffectStream;
         Clip soundEffect;
         try {
-            soundEffectStream = AudioSystem.getAudioInputStream(new File("assets/break.wav"));
+            soundEffectStream = AudioSystem.getAudioInputStream(new File(CONSTANTS.BREAK_AUDIO_PATH));
             AudioFormat format = soundEffectStream.getFormat();
             DataLine.Info info = new DataLine.Info(Clip.class, format);
             soundEffect = (Clip) AudioSystem.getLine(info);

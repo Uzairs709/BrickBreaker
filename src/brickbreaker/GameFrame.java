@@ -7,21 +7,18 @@ import javax.swing.JFrame;
 
 public class GameFrame extends JFrame {
 
-    private final int SCREEN_WIDTH = 800;
-    private final int SCREEN_HEIGHT = 500;
-    private final Settings gameSettings;
-
     public GameFrame() {
-        setTitle("Brick Breaker");
+        setTitle(CONSTANTS.TITLE);
         super.setResizable(false);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        super.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+
+        super.setSize(CONSTANTS.PANEL_WIDTH, CONSTANTS.PANEL_HEIGHT);
         super.setLocationRelativeTo(null);
-        super.setIconImage(new ImageIcon("assets/icon.png").getImage());
+        super.setIconImage(new ImageIcon(CONSTANTS.ICON_IMAGE).getImage());
         super.add(new GamePanel());
         
         // Game settings
-        gameSettings = Settings.getInstance();
+        Settings gameSettings = Settings.getInstance();
         
         if (gameSettings.isBackgroundMusicOn()) {
             this.playBackgroundMusic();
@@ -32,8 +29,6 @@ public class GameFrame extends JFrame {
      * Plays background music loop in a separate thread
      */
     private void playBackgroundMusic() {
-        new Thread(() -> {
-            AudioPlayback.playMusic();
-        }).start();
+        new Thread(AudioPlayback::playMusic).start();
     }
 }

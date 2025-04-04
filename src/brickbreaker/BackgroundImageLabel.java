@@ -12,13 +12,13 @@ import javax.swing.JLabel;
 
 public class BackgroundImageLabel extends JLabel {
     public BackgroundImageLabel() {
-        super.setPreferredSize(new Dimension(800, 500));
-        super.setBounds(0, 0, 800, 500);
+        super.setPreferredSize(new Dimension(CONSTANTS.PANEL_WIDTH, CONSTANTS.PANEL_HEIGHT));
+        super.setBounds(0, 0, CONSTANTS.PANEL_WIDTH, CONSTANTS.PANEL_HEIGHT);
         
         // Load background image
         Image backgroundImage;
         try {
-            backgroundImage = ImageIO.read(new File("assets/bg.jpg"));
+            backgroundImage = ImageIO.read(new File(CONSTANTS.BACKGROUND_IMAGE));
             super.setIcon(new ImageIcon(backgroundImage));
         } catch (IOException ex) {
             System.out.println("[ERROR] Unable to load background image");

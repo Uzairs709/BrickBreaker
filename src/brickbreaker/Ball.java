@@ -3,61 +3,104 @@ package brickbreaker;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.Rectangle;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Ball extends JButton {
 
-    private final int BALL_WIDTH = 20;
-    private final int BALL_HEIGHT = 15;
-    public int xVelocity = 4;
-    public int yVelocity = -4;
-    public int x = 325;
-    public int y = 350;
+    private static final int BALL_WIDTH = 20;
+    private static final int BALL_HEIGHT = 15;
+    private static final int RIGHT_BOUND = 790;
+    private static final int LEFT_BOUND = 0;
+    private static final int TOP_BOUND = 0;
+
+    public void setxVelocity(int xVelocity) {
+        this.xVelocity = xVelocity;
+    }
+
+    public void setyVelocity(int yVelocity) {
+        this.yVelocity = yVelocity;
+    }
+
+    private int xVelocity = 4;
+    private int yVelocity = -4;
+    private int x = 325;
+    private int y = 350;
+
+    public int getxVelocity() {
+        return xVelocity;
+    }
+
+    public int getyVelocity() {
+        return yVelocity;
+    }
 
     public Ball() {
-        super.setPreferredSize(new Dimension(BALL_WIDTH, BALL_HEIGHT));
-        super.setBounds(x, y, BALL_WIDTH, BALL_HEIGHT);
-        super.setBackground(new Color(255, 255, 255, 0));
-        super.setBorderPainted(false);
-        super.setFocusable(false);
+        setPreferredSize(new Dimension(BALL_WIDTH, BALL_HEIGHT));
+        setBounds(x, y, BALL_WIDTH, BALL_HEIGHT);
+        setBackground(new Color(255, 255, 255, 0));
+        setBorderPainted(false);
+        setFocusable(false);
+        loadBallImage();
+    }
 
-        // Load ball image
+    // Extracted method for loading the ball image.
+    private void loadBallImage() {
         try {
-            Image baseImage = ImageIO.read(new File("assets/ball.png")).getScaledInstance(BALL_WIDTH, BALL_HEIGHT, Image.SCALE_SMOOTH);
-            super.setIcon(new ImageIcon(baseImage));
+            Image ballImage = ImageIO.read(new File("assets/ball.png"))
+                    .getScaledInstance(BALL_WIDTH, BALL_HEIGHT, Image.SCALE_SMOOTH);
+            setIcon(new ImageIcon(ballImage));
         } catch (IOException ex) {
             System.out.println("[ERROR] Unable to load ball image");
         }
     }
 
     public void moveBall() {
-        if (this.x < 0 || (this.x + this.getBALL_WIDTH()) > 790) {
-            this.xVelocity *= -1;
-        }
-        if (this.y < 0) {
-            this.yVelocity *= -1;
-        }
+        // Reflect velocity based on boundaries.
+        xVelocity = reflectHorizontal(x, BALL_WIDTH, xVelocity, LEFT_BOUND, RIGHT_BOUND);
+        yVelocity = reflectVertical(y, yVelocity, TOP_BOUND);
 
-        this.x += this.xVelocity;
-        this.y += this.yVelocity;
-        this.setBounds(this.x, this.y, this.BALL_WIDTH, this.BALL_HEIGHT);
+        // Update position.
+        x += xVelocity;
+        y += yVelocity;
+        setBounds(x, y, BALL_WIDTH, BALL_HEIGHT);
+    }
 
+    // Helper method for horizontal reflection.
+    private int reflectHorizontal(int pos, int size, int velocity, int leftBound, int rightBound) {
+        if (pos < leftBound || pos + size > rightBound) {
+            return -velocity;
+        }
+        return velocity;
+    }
+
+    // Helper method for vertical reflection.
+    private int reflectVertical(int pos, int velocity, int topBound) {
+        if (pos < topBound) {
+            return -velocity;
+        }
+        return velocity;
     }
 
 
-    public int getBALL_WIDTH() {
+    public int getBallWidth() {
         return BALL_WIDTH;
     }
 
-    public int getBALL_HEIGHT() {
+    public int getBallHeight() {
         return BALL_HEIGHT;
     }
 
+    @Override
+    public int getX() {
+        return x;
+    }
+
+    @Override
+    public int getY() {
+        return y;
+    }
 }

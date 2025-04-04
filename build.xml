@@ -81,12 +81,12 @@
     <!-- Target to run ckjm -->
     <target name="ckjm">
         <!-- Run ckjm on the specified classes -->
-        <ckjm outputfile="ckjm_metrics.xml" format="xml" classdir="D:/8th Semester/Software Re-engineering/Assignment1/Bricks/build/classes/brickbreaker">
+        <ckjm outputfile="ckjm_metrics_new.xml" format="xml" classdir="D:\8th Semester\Software Re-engineering\Assignment1\Bricks\out\production\Bricks\brickbreaker">
             <include name="**/*.class"/> <!-- Include all .class files -->
             <exclude name="**/*Test.class"/> <!-- Exclude test classes if needed -->
         </ckjm>
 
         <!-- Optional: Generate an HTML report using XSLT -->
-        <style in="ckjm_metrics.xml" style="D:/8th Semester/Software Re-engineering/ckjm.xsl" out="ckjm_metrics.html"/>
+        <style in="ckjm_metrics_new.xml" style="D:/8th Semester/Software Re-engineering/ckjm.xsl" out="ckjm_metrics.html"/>
     </target>
 </project>
