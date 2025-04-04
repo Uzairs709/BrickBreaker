@@ -60,8 +60,8 @@ public class Ball extends JButton {
 
     public void moveBall() {
         // Reflect velocity based on boundaries.
-        xVelocity = reflectHorizontal(x, BALL_WIDTH, xVelocity, LEFT_BOUND, RIGHT_BOUND);
-        yVelocity = reflectVertical(y, yVelocity, TOP_BOUND);
+        xVelocity = BallMovementPhysics.reflectHorizontal(x, BALL_WIDTH, xVelocity, LEFT_BOUND, RIGHT_BOUND);
+        yVelocity = BallMovementPhysics.reflectVertical(y, yVelocity, TOP_BOUND);
 
         // Update position.
         x += xVelocity;
@@ -69,21 +69,7 @@ public class Ball extends JButton {
         setBounds(x, y, BALL_WIDTH, BALL_HEIGHT);
     }
 
-    // Helper method for horizontal reflection.
-    private int reflectHorizontal(int pos, int size, int velocity, int leftBound, int rightBound) {
-        if (pos < leftBound || pos + size > rightBound) {
-            return -velocity;
-        }
-        return velocity;
-    }
 
-    // Helper method for vertical reflection.
-    private int reflectVertical(int pos, int velocity, int topBound) {
-        if (pos < topBound) {
-            return -velocity;
-        }
-        return velocity;
-    }
 
 
     public int getBallWidth() {

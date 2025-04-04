@@ -11,15 +11,13 @@ public class LevelTwo implements Level {
     private static final int Y_INCREMENT = 30;
 
     @Override
-    public ArrayList<Brick> createBrickPattern() {
-        ArrayList<Brick> bricks = new ArrayList<>();
+    public void createBrickPattern(ArrayList<Brick> bricks) {
         int yPos = START_Y;
         for (int row = 1; row <= NUM_ROWS; row++) {
             // Extract method for creating a row of bricks
             bricks.addAll(createBricksForRow(row, yPos));
             yPos += Y_INCREMENT;
         }
-        return bricks;
     }
 
     // Extracted method for creating bricks in a single row

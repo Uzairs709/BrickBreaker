@@ -11,8 +11,7 @@ public class LevelFour implements Level {
     private static final int Y_INCREMENT = 30;
 
     @Override
-    public ArrayList<Brick> createBrickPattern() {
-        ArrayList<Brick> bricks = new ArrayList<>();
+    public void createBrickPattern(ArrayList<Brick> bricks) {
         int currentY = INITIAL_Y;
 
         // Use a loop with a counter representing bricks in the row
@@ -21,7 +20,6 @@ public class LevelFour implements Level {
             nextRowStartX += X_INCREMENT;
             currentY += Y_INCREMENT;
         }
-        return bricks;
     }
 
     // Extracted method to create a row of bricks

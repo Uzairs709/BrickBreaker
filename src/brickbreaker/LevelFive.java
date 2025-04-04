@@ -17,12 +17,10 @@ public class LevelFive implements Level {
     private static final int Y_INCREMENT = 30;
 
     @Override
-    public ArrayList<Brick> createBrickPattern() {
-        ArrayList<Brick> bricks = new ArrayList<>();
+    public void createBrickPattern(ArrayList<Brick> bricks) {
         // Create two triangle patterns using the extracted method
         bricks.addAll(createTrianglePattern(TRIANGLE_ONE_START_X, TRIANGLE_ONE_START_Y));
         bricks.addAll(createTrianglePattern(TRIANGLE_TWO_START_X, TRIANGLE_TWO_START_Y));
-        return bricks;
     }
 
     // Extracted method to create a triangle pattern of bricks

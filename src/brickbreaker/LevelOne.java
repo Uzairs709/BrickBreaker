@@ -10,8 +10,8 @@ public class LevelOne implements Level {
     private static final int GAP = 20;
 
     @Override
-    public ArrayList<Brick> createBrickPattern() {
-        ArrayList<Brick> bricks = new ArrayList<>();
+    public void createBrickPattern(ArrayList<Brick> bricks) {
+
         int currentX = 0;
         int currentY = INITIAL_Y;
         // Create a prototype brick to retrieve brick dimensions
@@ -30,6 +30,6 @@ public class LevelOne implements Level {
             bricks.add(brick);
             currentX += brickWidth + GAP;
         }
-        return bricks;
+
     }
 }
