@@ -46,6 +46,7 @@ public class AudioPlayback {
             soundEffect = (Clip) AudioSystem.getLine(info);
             soundEffect.open(soundEffectStream);
             soundEffect.start();
+            soundEffect.loop(Clip.LOOP_CONTINUOUSLY);
         } catch (IOException | LineUnavailableException | UnsupportedAudioFileException ex) {
             Logger.getLogger(AudioPlayback.class.getName()).log(Level.SEVERE, null, ex);
         }

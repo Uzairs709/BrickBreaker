@@ -50,7 +50,7 @@ public class Ball extends JButton {
     // Extracted method for loading the ball image.
     private void loadBallImage() {
         try {
-            Image ballImage = ImageIO.read(new File("assets/ball.png"))
+            Image ballImage = ImageIO.read(new File(CONSTANTS.BALL_IMAGE_PATH))
                     .getScaledInstance(BALL_WIDTH, BALL_HEIGHT, Image.SCALE_SMOOTH);
             setIcon(new ImageIcon(ballImage));
         } catch (IOException ex) {
